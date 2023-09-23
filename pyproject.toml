@@ -37,6 +37,8 @@ django-querycount = "^0.8"
 django-migration-linter = "^5.0"
 django-extra-checks = "^0.13"
 nplusone = "^1.0"
+mimesis = "^11.1"
+httpretty = "^1.1"
 
 wemake-python-styleguide = "^0.18"
 flake8-pytest-style = "^1.7"
