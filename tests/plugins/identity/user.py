@@ -1,9 +1,10 @@
 from typing import Callable
 
 import pytest
-from mimesis import Address, Gender, Generic, Person
+from mimesis import Address, Generic, Person
 from mimesis.locales import Locale
 from pydantic import BaseModel
+from django.test import Client
 
 from server.apps.identity.models import User
 
@@ -55,12 +56,21 @@ def assert_create_correct_user_data() -> Callable[[str, BaseModel], None]:
 
 @pytest.fixture()
 def test_new_user(
-    user_data_generate: BaseModel
+    user_data_generate: BaseModel,
 ) -> User:
     """Create new user for testing needs."""
     user_data = user_data_generate.model_dump()
-    # sorry for that
     keys_list = ['password1', 'password2']
     [user_data.pop(key) for key in keys_list]
     user = User.objects.create_user(**user_data, password='password')
     return user
+
+
+@pytest.fixture()
+def logged_in_client(
+    test_new_user: User,
+    client: Client
+) -> Client:
+    """Returns logged in client"""
+    client.force_login(test_new_user)
+    return client

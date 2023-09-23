@@ -35,6 +35,7 @@ def external_api_post_mock(
             status=HTTPStatus.CREATED
         )
         yield external_api_placeholder_lead_id_response  # type: ignore[misc]
+
         assert httpretty.has_request()
 
 
@@ -51,4 +52,5 @@ def external_api_patch_mock(
             status=HTTPStatus.OK
         )
         yield external_api_placeholder_lead_id_response  # type: ignore[misc]
+
         assert httpretty.has_request()

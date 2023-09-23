@@ -24,7 +24,17 @@ services:
       args:
         - UID=${UID:-1000}
         - GID=${GID:-1000}
+  json-server:
+    image: vimagick/json-server
+    command: -H 0.0.0.0 -p 3000 -w db.json
+    volumes:
+      - ./docker/json-server/db.json:/data/db.json
+    ports:
+      - "3000:3000"
+    networks:
+      - webnet
 
 networks:
   # Fake API network:
   bitrixnet:
+  webnet:

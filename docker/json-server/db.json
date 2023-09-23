@@ -1,0 +1,23 @@
+{
+  "users":
+    [],
+  "photos":
+    [
+    {
+      "id": 1,
+      "url": "https://via.placeholder.com/600/f66b97"
+    },
+    {
+      "id": 2,
+      "url": "https://via.placeholder.com/600/f66b97"
+    },
+    {
+      "id": 3,
+      "url": "https://via.placeholder.com/600/f66b97"
+    },
+    {
+      "id": 4,
+      "url": "https://via.placeholder.com/600/f66b97"
+    }
+  ]
+}

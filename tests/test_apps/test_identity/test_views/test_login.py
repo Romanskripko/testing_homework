@@ -11,6 +11,7 @@ from pydantic import BaseModel
 def test_registration_get(client: Client) -> None:
     """Basic `get` method for registration page works."""
     response = client.get(reverse('identity:registration'))
+
     assert response.status_code == HTTPStatus.OK
 
 

@@ -109,7 +109,7 @@ MIDDLEWARE = (  # noqa: WPS440
 ) + MIDDLEWARE
 
 # Logging N+1 requests:
-# NPLUSONE_RAISE = True  # comment out if you want to allow N+1 requests
+NPLUSONE_RAISE = True  # comment out if you want to allow N+1 requests
 NPLUSONE_LOGGER = logging.getLogger('django')
 NPLUSONE_LOG_LEVEL = logging.WARN
 NPLUSONE_WHITELIST = [
